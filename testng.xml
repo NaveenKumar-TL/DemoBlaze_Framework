@@ -4,6 +4,8 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="demo.TestScripts.TC_001_Launch_BroserTest"/>
+            <class name="demo.TestScripts.TC_002_Click_On_LaptopTest"/>
+
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
