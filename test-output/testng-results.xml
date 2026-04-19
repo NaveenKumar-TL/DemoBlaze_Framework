@@ -2,32 +2,54 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-19T10:17:08 IST" name="Default suite" finished-at="2026-04-19T10:17:22 IST" duration-ms="14270">
+  <suite started-at="2026-04-19T10:55:13 IST" name="Default suite" finished-at="2026-04-19T10:55:39 IST" duration-ms="25975">
     <groups>
     </groups>
-    <test started-at="2026-04-19T10:17:08 IST" name="Default test" finished-at="2026-04-19T10:17:22 IST" duration-ms="14270">
+    <test started-at="2026-04-19T10:55:13 IST" name="Default test" finished-at="2026-04-19T10:55:39 IST" duration-ms="25975">
       <class name="demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test">
-        <test-method is-config="true" signature="setupReport()[pri:0, instance:demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test@4ef74c30]" started-at="2026-04-19T10:17:07 IST" name="setupReport" finished-at="2026-04-19T10:17:08 IST" duration-ms="443" status="PASS">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test@3f1d2e23]" started-at="2026-04-19T10:55:13 IST" name="setupReport" finished-at="2026-04-19T10:55:13 IST" duration-ms="372" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method is-config="true" signature="init()[pri:0, instance:demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test@4ef74c30]" started-at="2026-04-19T10:17:08 IST" name="init" finished-at="2026-04-19T10:17:16 IST" duration-ms="8417" status="PASS">
+        <test-method is-config="true" signature="init()[pri:0, instance:demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test@3f1d2e23]" started-at="2026-04-19T10:55:13 IST" name="init" finished-at="2026-04-19T10:55:23 IST" duration-ms="9744" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="VerifyLaptop()[pri:0, instance:demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test@4ef74c30]" started-at="2026-04-19T10:17:16 IST" name="VerifyLaptop" finished-at="2026-04-19T10:17:20 IST" duration-ms="3699" status="PASS">
+        <test-method is-config="true" signature="setupTest(java.lang.reflect.Method)[pri:0, instance:demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test@3f1d2e23]" started-at="2026-04-19T10:55:23 IST" name="setupTest" finished-at="2026-04-19T10:55:23 IST" duration-ms="188" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test.VerifyLaptop()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupTest -->
+        <test-method signature="VerifyLaptop()[pri:0, instance:demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test@3f1d2e23]" started-at="2026-04-19T10:55:24 IST" name="VerifyLaptop" finished-at="2026-04-19T10:55:37 IST" duration-ms="12812" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyLaptop -->
-        <test-method signature="Verify_LaptopDetails()[pri:1, instance:demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test@4ef74c30]" started-at="2026-04-19T10:17:20 IST" name="Verify_LaptopDetails" finished-at="2026-04-19T10:17:21 IST" depends-on-methods="demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test.VerifyLaptop" duration-ms="476" status="PASS">
+        <test-method is-config="true" signature="setupTest(java.lang.reflect.Method)[pri:0, instance:demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test@3f1d2e23]" started-at="2026-04-19T10:55:37 IST" name="setupTest" finished-at="2026-04-19T10:55:37 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test.Verify_LaptopDetails()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupTest -->
+        <test-method signature="Verify_LaptopDetails()[pri:1, instance:demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test@3f1d2e23]" started-at="2026-04-19T10:55:37 IST" name="Verify_LaptopDetails" finished-at="2026-04-19T10:55:39 IST" depends-on-methods="demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test.VerifyLaptop" duration-ms="2231" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Verify_LaptopDetails -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test@4ef74c30]" started-at="2026-04-19T10:17:21 IST" name="teardown" finished-at="2026-04-19T10:17:22 IST" duration-ms="1324" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test@3f1d2e23]" started-at="2026-04-19T10:55:39 IST" name="teardown" finished-at="2026-04-19T10:55:39 IST" duration-ms="377" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="reportGenerate()[pri:0, instance:demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test@4ef74c30]" started-at="2026-04-19T10:17:22 IST" name="reportGenerate" finished-at="2026-04-19T10:17:23 IST" duration-ms="791" status="PASS">
+        <test-method is-config="true" signature="reportGenerate()[pri:0, instance:demo.TestScripts.TC_003_Capture_Laptop_Names_Prices_Test@3f1d2e23]" started-at="2026-04-19T10:55:39 IST" name="reportGenerate" finished-at="2026-04-19T10:55:40 IST" duration-ms="517" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportGenerate -->

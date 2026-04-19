@@ -1,14 +1,18 @@
 package demo.TestScripts;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
@@ -18,14 +22,20 @@ import demo.pages.demo_locator;
 
 public class TC_003_Capture_Laptop_Names_Prices_Test extends Base_Class
 {
+	demo_locator demo;
+	@BeforeMethod
+	public void setupTest(Method method)
+	{
+	    test = extent.createTest(method.getName())
+	            .assignCategory("Positive Testing")
+	            .assignAuthor("Narendra");
+
+	    demo = new demo_locator(driver);
+	}
 	@Test(priority=0)
 	public void VerifyLaptop()
 	{
-		test =extent.createTest("Verify Laptops")
-				.assignCategory("Positive Testing")
-				.assignAuthor("Narendra");
 		
-		demo_locator demo=new demo_locator(driver);
 		// --- Click on Laptops properly
 	    // WebElement laptopsTab = driver.findElement(By.xpath("//a[contains(@onclick,'notebook')]"));
 
@@ -52,6 +62,66 @@ public class TC_003_Capture_Laptop_Names_Prices_Test extends Base_Class
 @Test(priority=1, dependsOnMethods="VerifyLaptop")
 public void Verify_LaptopDetails()
 {
+	//List<String> laptopList = new ArrayList<>();
+	Set<String> laptopSet = new LinkedHashSet<>();
+	Map<String , Integer> laptopPriceMap = new LinkedHashMap<>();
+
+	while(true)
+	{
+	    List<WebElement> products =
+	            driver.findElements(By.xpath("//div[@class='card-block']"));
+
+	    // First product name (for wait)
+	    String oldFirstProduct = products.get(0)
+	            .findElement(By.tagName("h4")).getText();
+
+	    for(int i = 0; i < products.size(); i++)
+	    {
+	        List<WebElement> freshProducts =
+	                driver.findElements(By.xpath("//div[@class='card-block']"));
+
+	        String name = freshProducts.get(i)
+	                .findElement(By.tagName("h4")).getText();
+
+	        String price = freshProducts.get(i)
+	                .findElement(By.tagName("h5")).getText();
+
+	        if(price == null || price.isEmpty()) continue;
+
+	        String numericPrice = price.replace("$", "").trim();
+	        int priceValue = Integer.parseInt(numericPrice);
+
+	        laptopPriceMap.put(name, priceValue);
+
+	        String laptopDetails = name + " - " + price;
+
+	        if(!laptopSet.contains(laptopDetails))
+	        {
+	            laptopSet.add(laptopDetails);
+	            System.out.println(laptopDetails);
+	            test.log(Status.INFO, laptopDetails);
+	        }
+	    }
+
+	    // 🔥 Next button check
+	    List<WebElement> nextBtn = driver.findElements(By.id("next2"));
+
+	    if(nextBtn.size() > 0 && nextBtn.get(0).isDisplayed())
+	    {
+	        nextBtn.get(0).click();
+
+	        // Wait until new products load
+	        wait.until(ExpectedConditions.not(
+	                ExpectedConditions.textToBePresentInElementLocated(
+	                        By.xpath("(//div[@class='card-block']//h4)[1]"),
+	                        oldFirstProduct)));
+	    }
+	    else
+	    {
+	        break; // ❗ exit loop when no next page
+	    }
+	}
+	/*
 	test =extent.createTest("Verify Laptops")
 			.assignCategory("Positive Testing")
 			.assignAuthor("Narendra");
@@ -83,6 +153,7 @@ public void Verify_LaptopDetails()
 
         laptopPriceMap.put(name, priceValue);
     }
+    */
     /*
     while(true)
     {
