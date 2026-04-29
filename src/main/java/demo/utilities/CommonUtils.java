@@ -3,13 +3,15 @@ package demo.utilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 public class CommonUtils {
 
     WebDriver driver;
     Actions action;
 
-    public CommonUtils(WebDriver driver) {
+    public CommonUtils(WebDriver driver)
+    {
         this.driver = driver;
         this.action = new Actions(driver);
     }
@@ -29,4 +31,19 @@ public class CommonUtils {
     public void actionClick(WebElement element) {
         action.moveToElement(element).click().perform();
     }
+
+	 public static void selectByIndex(WebElement element, int index)
+	 {
+	        new Select(element).selectByIndex(index);
+	    }
+	
+	    public static void selectByValue(WebElement element, String value)
+	    {
+	        new Select(element).selectByValue(value);
+	    }
+	
+	    public static void selectByVisibleText(WebElement element, String text) 
+	    {
+	        new Select(element).selectByVisibleText(text);
+	    }
 }
