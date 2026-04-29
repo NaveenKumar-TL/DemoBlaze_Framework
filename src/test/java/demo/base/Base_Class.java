@@ -108,7 +108,8 @@ public class Base_Class {
     public void reportGenerate() {
         extent.flush();
     }
-}/*package demo.base;
+}
+/*package demo.base;
 
 import java.io.File;
 import java.io.FileInputStream;
